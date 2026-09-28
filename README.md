@@ -7,7 +7,7 @@
 复制下面整段，发给你自己电脑上的 Codex。安装前请先看[权限说明](#权限与隐私)；安装助手会要求本机文件写入、插件注册及 Hooks 信任审核。
 
 ```text
-请帮我安装 https://github.com/ykuang771-afk/Codex_Pet_WISADEL 中的维什戴尔 Codex 内嵌宠物和可选配套助手。先阅读仓库 README、docs/ARCHITECTURE.md 和 docs/FRAMES.md，检查当前系统是否为 Windows、Codex CLI 是否可用，并向我说明将写入 ~/.codex/pets、%LOCALAPPDATA%/WisadelCompanion，以及配套助手需要的键鼠计数、无障碍位置读取、本地 Codex 用量日志和只读额度查询权限。不要读取或上传我的聊天正文、键入内容或凭据。确认我授权这些本机权限后，克隆仓库到我选择的目录，先运行 scripts/install.ps1 -DryRun 检查，再运行 scripts/install.ps1（默认 v2 休息版；如果我只要宠物则加 -PetOnly）。安装前备份已有同名宠物；遇到已安装的同名助手不要重复启动。按 Codex 界面完成 Hooks 信任审核，重启 Codex，选择“维什戴尔”，验证宠物和助手各自工作。若当前 Codex 版本不支持这些包或插件，请停在兼容性检查并告诉我具体原因，不要修改 Codex 程序文件。
+请帮我安装 https://github.com/ykuang771-afk/Codex_Pet_WISADEL 中的维什戴尔 Codex 内嵌宠物和配套助手。先阅读仓库 README、docs/ARCHITECTURE.md 和 docs/FRAMES.md，检查当前系统是否为 Windows、Codex CLI 是否可用，并向我说明将写入 ~/.codex/pets、%LOCALAPPDATA%/WisadelCompanion，以及配套助手需要的键鼠计数、无障碍位置读取、本地 Codex 用量日志和只读额度查询权限。不要读取或上传我的聊天正文、键入内容或凭据。确认我授权这些本机权限后，克隆仓库到我选择的目录，先运行 scripts/install.ps1 -DryRun 检查，再运行 scripts/install.ps1（默认 v2 休息版及助手；如果我只要宠物则加 -PetOnly）。安装前备份已有同名宠物；遇到已安装的同名助手不要重复启动。按 Codex 界面完成 Hooks 信任审核，重启 Codex，选择“维什戴尔”，验证宠物和助手各自工作。向我说明 Windows 开机自启 Codex 可让已选宠物随应用启动；只有我明确同意时才设置开机自启。若当前 Codex 版本不支持这些包或插件，请停在兼容性检查并告诉我具体原因，不要修改 Codex 程序文件。
 ```
 
 ## 功能与位置
@@ -36,6 +36,14 @@ cd Codex_Pet_WISADEL
 PowerShell 如果拦截本次脚本，可在**当前进程**执行 `Set-ExecutionPolicy -Scope Process Bypass` 后重试；无需修改系统级策略。脚本默认安装 v2 宠物及当前统计助手；仅安装宠物使用 `-PetOnly`。安装器将已有同名宠物或插件源码先备份到 `%LOCALAPPDATA%/WisadelCompanion/setup-backups/`，不清空计数与用量历史。安装后在 Codex 中选择“维什戴尔”，切换一次宠物或重启以刷新缓存；助手安装后重启 Codex，并按界面提示审核 Hooks。后续可通过插件设置关闭自动启动或取消安装。
 
 **手动只装宠物：**把 `pets/wisadel-rest/` 中的 `pet.json`、`spritesheet.png`、`spritesheet.webp` 三个文件一起复制到 `%CODEX_HOME%/pets/wisadel-rest/`；没有设置 `CODEX_HOME` 时用 `%USERPROFILE%/.codex/pets/wisadel-rest/`。先备份原目标目录。
+
+### 宠物怎么启动
+
+1. 安装完成后**打开 Codex 桌面应用**。宠物由 Codex 自身加载，单独打开图集文件不会出现宠物。
+2. 打开 Codex 的宠物选择器，选择 **“维什戴尔”**（包目录名是 `wisadel-rest`）。首次选择后应出现浮动宠物。已有同名宠物缓存时，先切换到其他宠物再切回来；仍未显示就重启 Codex。
+3. 统计助手随 Codex 插件启动。重启 Codex 后完成 Hooks 信任审核；悬停宠物可查看计数与额度，也可以对 Codex 说“显示维什戴尔统计面板”。如果不需要助手，可在插件设置中关闭自动启动或卸载插件，宠物本身仍可使用。
+
+**可选开机自启：**如果电脑内存够用，建议在 Windows **设置 → 应用 → 启动** 中启用 Codex。这样 Windows 登录后 Codex 会启动，已选择的宠物也会随 Codex 加载；无需另为宠物设置启动项。如果启动列表没有 Codex，可把 Codex 的应用快捷方式放入用户的“启动”文件夹（`Win + R` 输入 `shell:startup`），并先验证快捷方式能正常打开 Codex。电脑资源紧张时保持手动启动即可。
 
 统计助手作为独立 Codex 插件注册，不是宠物图集的一部分。安装器把插件复制到 `%LOCALAPPDATA%/WisadelCompanion/marketplace/`，为本机 Python 生成 MCP 与 Hooks 启动配置，再通过 `codex plugin marketplace add`、`codex plugin add` 注册。若同名助手已经安装，脚本会跳过插件以避免重复计数。插件运行与完整架构见[架构说明](docs/ARCHITECTURE.md)。
 
