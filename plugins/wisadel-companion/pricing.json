@@ -1,0 +1,15 @@
+{
+  "verified_at": "2026-09-28",
+  "basis": "Standard API equivalent, not subscription charges; price snapshot is retained per event.",
+  "estimate_overrides": {"codex-auto-review":"gpt-5.6-terra"},
+  "override_basis": "User-requested equivalent estimate; does not identify the actual underlying model.",
+  "models": {
+    "gpt-6-astra": {"input":"10","cached":"1","write":"12.5","output":"50","long_threshold":272000,"long_scope":"request","source":"https://developers.openai.com/api/docs/models/gpt-6-astra"},
+    "gpt-6-sol": {"input":"2","cached":"0.2","write":"2.5","output":"10","long_threshold":272000,"long_scope":"request","source":"https://developers.openai.com/api/docs/models/gpt-6-sol"},
+    "gpt-6-luna": {"input":"0.1","cached":"0.01","write":"0.125","output":"0.5","long_threshold":272000,"long_scope":"request","source":"https://developers.openai.com/api/docs/models/gpt-6-luna"},
+    "gpt-5.6-sol": {"input":"4","cached":"0.4","write":"5","output":"20","long_threshold":272000,"long_scope":"request","source":"https://developers.openai.com/api/docs/models/gpt-5.6-sol"},
+    "gpt-5.6-terra": {"input":"2","cached":"0.2","write":"2.5","output":"12","long_threshold":272000,"long_scope":"request","source":"https://developers.openai.com/api/docs/models/gpt-5.6-terra"},
+    "gpt-5.6-luna": {"input":"0.2","cached":"0.02","write":"0.25","output":"1.2","long_threshold":272000,"long_scope":"request","source":"https://developers.openai.com/api/docs/models/gpt-5.6-luna"},
+    "gpt-5.5": {"input":"5","cached":"0.5","write":null,"output":"30","long_threshold":272000,"long_scope":"session","source":"https://developers.openai.com/api/docs/models/gpt-5.5"}
+  }
+}

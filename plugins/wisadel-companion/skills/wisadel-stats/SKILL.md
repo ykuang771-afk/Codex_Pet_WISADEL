@@ -1,0 +1,22 @@
+---
+name: wisadel-stats
+description: 查看维什戴尔的键鼠计数，打开交互统计面板，设置悬停计数条、暂停统计或自动启动。
+---
+
+Use this plugin's `show_dashboard` to display the interactive keyboard and mouse counts.
+Use `get_stats` for a text summary or troubleshooting. Use `set_preferences` only for the user's requested changes.
+The companion counts every key press, including modifiers, suppresses held-key repeats, and counts five mouse buttons. Only totals are stored.
+The hover badge follows the native Wisadel pet via Windows accessibility; it is an automatically launched companion process, not a modification of Codex binaries.
+When fresh 5h remaining quota is strictly below 5%, the companion requests a Windows tray notification with the local reset time. It persists the notified reset timestamp in quota-alert.json and notifies only once per reset window, even across restarts. Windows notification settings govern visibility; it does not change native pet animations.
+At the user's request, codex-auto-review is estimated at GPT-5.6 Terra rates, including historical events. This is a user-selected equivalent rate, not identification of the underlying model. Original model names and token counts are preserved; migrations have pre-change database backups and price_adjustments audit records.
+The compact hover panel uses serif text in a compact 210 by 166 logical-pixel layout. Its currency label is only $, and it omits the API estimate note row. It uses the current monitor work-area midpoint: pet on the left half means panel on the right; pet on the right half means panel on the left. It switches as the pet crosses the midpoint, with an edge fallback only when needed. Vertical position is clamped to the work area.
+Moving the pointer away hides the badge but keeps counting. Closing Codex stops the companion. A runtime with `running: false` is not proof that counting is active.
+The hover panel appears after 200 ms and shows lifetime combined input count, 5h/week remaining quota, today locally observed Codex tokens and an estimated Standard API equivalent USD amount for the current local 04:00-to-04:00 window, using normal readable text with no seven-segment digits or bar indicators. Keyboard/mouse UI remains lifetime total. Token and USD UI uses daily_tokens and daily_usd_estimate for daily_start <= event time < daily_end (local 04:00 cutoff); 00:00–03:59 belongs to the previous day. Preserve lifetime ledger data, even when the daily display changes at 04:00. Never reset historical data. Reset timestamps use the computer's local time zone. A read-only Codex app-server client polls account/rateLimits/read every 30 seconds; never claim per-second updates. Missing, failed or stale quotas are marked unavailable. This client does not run model turns or consume earned rate-limit resets.
+The local token ledger checks completed-request usage logs every 5 seconds, persists deduplicated events and price versions in %LOCALAPPDATA%/WisadelCompanion/usage.sqlite3, and makes consistent weekly-named backups every hour. USD is an API-equivalent estimate for priced models, not a subscription invoice; unpriced internal model tokens remain explicitly unpriced. Never estimate token counts from quota percentages. Keyboard counts retain their existing project data path plus recovery snapshots in the persistent user data directory. Source logs are read-only and chat contents are never copied into the ledger.
+Do not launch the old standalone counter at the same time. Never invent counts, reset existing statistics, or promise cross-state pet animation control.
+
+Small speech bubbles show the user-provided start and completion quotes, plus the four other quotes at random 3–7 minute intervals without consecutive repeats. They dismiss automatically after 4–6 seconds, yield to task events, avoid the pet/toolbar/stats panel, and never take focus. Hooks and local main-task event metadata are coalesced; log fallback can take up to about 5 seconds. No prior conversation text is copied into the event queue.
+
+Numeric UI uses Georgia, with Chinese text rendered in Noto Serif SC. The daily token display rounds to one million and uses Chinese units (e.g. 136,000,000 -> 1亿3600万), without changing precise ledger values. Dollar integer digits are larger than decimal digits. The MCP dashboard follows the same display rules.
+
+On a continuous five-second pet hover, the companion shows one random line from the six existing phrases, once for that hover. Leaving the pet or dragging resets this one-shot trigger. This is a text speech bubble; there is no audio file.

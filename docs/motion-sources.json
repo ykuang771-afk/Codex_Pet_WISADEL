@@ -1,0 +1,83 @@
+{
+  "running-right": {
+    "poses": 14,
+    "original_art_frames": 14,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 2,
+    "cycle_ms": 1050.0,
+    "source": "移动.gif",
+    "generated_inbetweens": false
+  },
+  "waving": {
+    "poses": 38,
+    "original_art_frames": 38,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 1,
+    "cycle_ms": 2100.0,
+    "source": "刚开始任务、鼠标放置在宠物上.gif",
+    "generated_inbetweens": false
+  },
+  "jumping": {
+    "poses": 15,
+    "original_art_frames": 5,
+    "position_only_tweens": true,
+    "repeats_per_atlas_loop": 2,
+    "cycle_ms": 1050.0,
+    "source": "点击宠物.gif",
+    "generated_inbetweens": false
+  },
+  "failed": {
+    "poses": 35,
+    "original_art_frames": 35,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 1,
+    "cycle_ms": 2100.0,
+    "source": "发癫（5小时token少于20%或者周额度剩余少于10%）.gif",
+    "generated_inbetweens": false
+  },
+  "waiting": {
+    "poses": 30,
+    "original_art_frames": 30,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 1,
+    "cycle_ms": 2100.0,
+    "source": "如果需要我进行有关任务的问题回答（单选、多选等）.gif",
+    "generated_inbetweens": false
+  },
+  "running": {
+    "poses": 38,
+    "original_art_frames": 38,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 1,
+    "cycle_ms": 2100.0,
+    "source": "刚开始任务、鼠标放置在宠物上.gif",
+    "generated_inbetweens": false
+  },
+  "review": {
+    "poses": 32,
+    "original_art_frames": 32,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 1,
+    "cycle_ms": 2100.0,
+    "source": "任务已经完成了.gif",
+    "generated_inbetweens": false
+  },
+  "idle_rest": {
+    "poses": 19,
+    "original_art_frames": 19,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 2,
+    "cycle_ms": 1050.0,
+    "source": "待机休息1.gif",
+    "generated_inbetweens": false
+  },
+  "running-left": {
+    "poses": 14,
+    "original_art_frames": 14,
+    "position_only_tweens": false,
+    "repeats_per_atlas_loop": 2,
+    "cycle_ms": 1050.0,
+    "source": "mirror of running-right",
+    "generated_inbetweens": false
+  }
+}

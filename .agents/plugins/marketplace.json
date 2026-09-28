@@ -1,0 +1,12 @@
+{
+  "name": "wisadel-community",
+  "interface": { "displayName": "Wisadel Community" },
+  "plugins": [
+    {
+      "name": "wisadel-companion",
+      "source": { "source": "local", "path": "./plugins/wisadel-companion" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

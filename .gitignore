@@ -1,0 +1,14 @@
+# Local installation data, build output, and test caches
+*.log
+*.tmp
+*.bak
+__pycache__/
+.pytest_cache/
+data/
+qa/
+backups/
+*.sqlite3
+*.sqlite3-*
+*.db
+.DS_Store
+Thumbs.db
