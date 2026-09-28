@@ -1,7 +1,7 @@
 # Image asset terms
 
 Character artwork and all image assets in `pets/`, `frames/`, `stickers/`,
-`docs/*.png`, and `*.ico` are **all rights reserved** by
+`docs/*.png`, `docs/previews/`, and `*.ico` are **all rights reserved** by
 their respective rights holders. They are excluded from the repository's MIT
 code license.
 
